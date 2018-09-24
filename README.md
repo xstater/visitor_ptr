@@ -26,7 +26,7 @@ int main(int argc,char *argv[]){
   auto up = std::make_unique<Fuck>(123);
   auto vp = std::visitor_ptr<Fuck>(up);//initilizing visitor_ptr through unique_ptr
   vp->fuck();//operator->()
-  vp.get();//same as unique_ptr
+  std::cout<<vp.get()<<std::endl;//same as unique_ptr
   return 0;
 }
 ```
