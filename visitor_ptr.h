@@ -32,6 +32,9 @@ namespace std{
         operator bool()const noexcept{
             return m_ptr != nullptr;
         }
+        operator Type*()const noexcept{
+            return m_ptr;
+        }
 
         Type &operator*()const noexcept{
             return *m_ptr;
