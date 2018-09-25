@@ -11,6 +11,10 @@ visitor_ptr是一种不持有资源的指针，类似于原始指针，但是可
 #include <iostream>
 #include "visitor_ptr.h"
 
+void func(Fuck *f){
+  std::cout<<"func:"<<f->a<<std::endl;
+}
+
 struct Fuck{
   int a;
   
@@ -27,6 +31,7 @@ int main(int argc,char *argv[]){
   auto vp = std::visitor_ptr<Fuck>(up);//initilizing visitor_ptr through unique_ptr
   vp->fuck();//operator->()
   std::cout<<vp.get()<<std::endl;//same as unique_ptr
+  func(vp);//same as raw pointer
   return 0;
 }
 ```
